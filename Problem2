@@ -1,0 +1,28 @@
+def sort(s):
+    for i in range(len(s)-1):
+        for j in range(len(s)-1):
+            if s[j]>s[j+1]:
+                temp=s[j]
+                s[j]=s[j+1]
+                s[j+1]=temp
+    return s
+    
+def strength(n,m,s):
+    while len(s)>n:
+        s[1]=s[0]+s[1]
+        del s[0]
+        s=sort(s)
+    print(min(s))
+    
+n=int(input(""))
+m=int(input(""))
+s=input("")
+s=s.split()
+for i in range(len(s)):
+    s[i]=int(s[i])
+s=sort(s)
+if len(s)==m and n<=m and m<=10**5:
+    strength(n,m,s)
+else:
+    print("Error")
+    
