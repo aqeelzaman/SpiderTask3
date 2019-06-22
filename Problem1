@@ -1,0 +1,11 @@
+n=int(input(""))
+s=o=0
+while int(n/10)>0:
+    s=0
+    while n>0:
+        r=int(n%10)
+        n=int(n/10)
+        s=s+r
+    o=o+1
+    n=s
+print(o)
